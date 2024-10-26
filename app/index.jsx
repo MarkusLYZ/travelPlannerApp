@@ -1,13 +1,12 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import Login from "./../components/Login";
 import { Colors } from "@/constants/Colors";
 
 export default function Index() {
   return (
     <View>
       <Image
-        style={{ width: "100%", height: 400 }}
-        source={require("./../assets/login.jpg")}
+        style={{ width: "100%", height: 440 }}
+        source={require("./../assets/images/login.jpg")}
       />
       <View style={styles.container}>
         <Text
