@@ -1,8 +1,10 @@
-import { Image, View, StyleSheet,Text } from 'react-native'
-import React from 'react'
+import { Image, View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
+import { useRouter } from "expo-router";
 
 export default function login() {
+  const router = useRouter();
   return (
     <View>
       <Image
@@ -15,7 +17,7 @@ export default function login() {
             fontSize: 30,
             fontFamily: "outfit-bold",
             textAlign: "center",
-            marginTop:10
+            marginTop: 10,
           }}
         >
           AI Travel Planner
@@ -26,13 +28,16 @@ export default function login() {
             fontSize: 17,
             textAlign: "center",
             color: Colors.GRAY,
-            marginTop:20
+            marginTop: 20,
           }}
         >
           Discover your next adventure effortlessly. Personalized itineraries at
           your fingertips. Travel smarter with AI driven insights.
         </Text>
-        <View style={styles.button}>
+        <TouchableOpacity
+          onPress={() => router.push("/auth/sign-in")}
+          style={styles.button}
+        >
           <Text
             style={{
               color: Colors.WHITE,
@@ -43,10 +48,10 @@ export default function login() {
           >
             Sign In With Google
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
-  )
+  );
 }
 const styles = StyleSheet.create({
   container: {
@@ -60,7 +65,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 15,
     backgroundColor: Colors.PRIMARY,
-    borderRadius:99,
-    marginTop: '25%'
+    borderRadius: 99,
+    marginTop: "25%",
   },
 });
