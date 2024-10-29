@@ -27,14 +27,14 @@ export default function SignUp() {
 
   const OnCreateAccount = () => {
     if (!email || !password || !fullName) {
-      ToastAndroid.show("Please Enter All Details", ToastAndroid.BOTTOM);
+      ToastAndroid.show("Please Enter All Details", ToastAndroid.LONG);
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed up
         const user = userCredential.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
