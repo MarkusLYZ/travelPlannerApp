@@ -35,6 +35,7 @@ export default function SignUp() {
         // Signed up
         const user = userCredential.user;
         // console.log(user);
+        router.replace("/mytrip");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -88,7 +89,7 @@ export default function SignUp() {
       </View>
       {/* Sign in button  */}
       <TouchableOpacity
-      onPress={OnCreateAccount}
+        onPress={OnCreateAccount}
         style={{
           padding: 20,
           backgroundColor: Colors.PRIMARY,
